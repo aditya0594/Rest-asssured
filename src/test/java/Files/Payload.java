@@ -19,4 +19,32 @@ public class Payload {
                 "    \"language\": \"French-IN\"\n" +
                 "}";
     }
+    public static String jiraIssue(String issueName){
+        return "{\n" +
+                "    \"fields\": {\n" +
+                "        \"project\": {\n" +
+                "            \"key\": \"TR\"\n" +
+                "        },\n" +
+                "        \"summary\": \"" + issueName +"\",\n" +
+                "        \"description\": {\n" +
+                "            \"type\": \"doc\",\n" +
+                "            \"version\": 1,\n" +
+                "            \"content\": [\n" +
+                "                {\n" +
+                "                    \"type\": \"paragraph\",\n" +
+                "                    \"content\": [\n" +
+                "                        {\n" +
+                "                            \"type\": \"text\",\n" +
+                "                            \"text\": \"Creating issue type names using the REST API\"\n" +
+                "                        }\n" +
+                "                    ]\n" +
+                "                }\n" +
+                "            ]\n" +
+                "        },\n" +
+                "        \"issuetype\": {\n" +
+                "            \"name\": \"Bug\"\n" +
+                "        }\n" +
+                "    }\n" +
+                "}";
+    }
 }
