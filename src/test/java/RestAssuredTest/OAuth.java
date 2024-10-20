@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import POJO.POJO_Course;
+import POJO.POJO_getcourses;
 import io.restassured.parsing.Parser;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -29,12 +31,15 @@ public class OAuth {
         JsonPath jsonPath = new JsonPath(response);
         String accessToken = jsonPath.getString("access_token");
         System.out.println(accessToken);
-        String r2 = given()
+         POJO_getcourses gc = given()
                 .queryParams("access_token", accessToken)
                 .when()
                 .get("https://rahulshettyacademy.com/oauthapi/getCourseDetails")
-                .asString();
-        System.out.println(r2);
+                        .as(POJO_getcourses.class);
+        System.out.println("Linked link for the pojo class " + gc.getLinkedIn());
+        System.out.println("Instructor name is : " + gc.getInstructor());
+
+
 
     }
 }

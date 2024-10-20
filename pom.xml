@@ -44,7 +44,14 @@
         <artifactId>json-path</artifactId>
         <version>4.3.3</version>
     </dependency>
-        <!-- https://mvnrepository.com/artifact/io.rest-assured/xml-path -->
+      <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+          <version>2.17.2</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/io.rest-assured/xml-path -->
     <dependency>
         <groupId>io.rest-assured</groupId>
         <artifactId>xml-path</artifactId>
