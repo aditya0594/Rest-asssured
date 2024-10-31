@@ -1,7 +1,5 @@
 package RestAssuredTest;
 
-import Files.ReusableMethod;
-import com.sun.net.httpserver.Request;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
@@ -62,6 +60,7 @@ public class specBuilder {
 
         //String response = RestAssured.given().log().all().queryParam("Key", "=qaclick123").header("Content-Type", "application/json")
         RequestSpecification res =  given().spec(req).body(p);
+
         String response =  res.when().post("/maps/api/place/add/json")
                 .then().spec(ResponsSpec).body("scope", equalTo("APP"))
                 .extract().response().asString();

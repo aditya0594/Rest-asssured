@@ -1,17 +1,13 @@
 package RestAssuredTest;
 
-import Files.Payload;
 import Files.ReusableMethod;
 import io.restassured.path.json.JsonPath;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;

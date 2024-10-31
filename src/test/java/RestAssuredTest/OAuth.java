@@ -2,6 +2,7 @@ package RestAssuredTest;
 
 import static io.restassured.RestAssured.given;
 
+import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import pojo.Api;
 import pojo.GetCourse;
@@ -14,7 +15,7 @@ public class OAuth {
 
 // TODO Auto-generated method stub
 
-        String response = given()
+        String response = RestAssured.given()
                         .formParams("client_id", "692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com")
                         .formParams("client_secret", "erZOWM9g3UtwNRj340YYaK_W")
                         .formParams("grant_type", "client_credentials")
@@ -26,7 +27,7 @@ public class OAuth {
         JsonPath jsonPath = new JsonPath(response);
         String accessToken = jsonPath.getString("access_token");
         System.out.println(accessToken);
-         GetCourse gc = given()
+         GetCourse gc = RestAssured.given()
                 .queryParams("access_token", accessToken)
                 .when()
                 .get("https://rahulshettyacademy.com/oauthapi/getCourseDetails")

@@ -38,7 +38,7 @@
         <artifactId>json-schema-validator</artifactId>
         <version>4.3.3</version>
     </dependency>
-        <!-- https://mvnrepository.com/artifact/io.rest-assured/json-path -->
+      <!-- https://mvnrepository.com/artifact/io.rest-assured/json-path -->
     <dependency>
         <groupId>io.rest-assured</groupId>
         <artifactId>json-path</artifactId>
@@ -85,17 +85,26 @@
         <version>2.2</version>
         <scope>test</scope>
     </dependency>
-<!-- https://mvnrepository.com/artifact/junit/junit -->
-      <!-- https://mvnrepository.com/artifact/org.testng/testng -->
       <dependency>
           <groupId>org.testng</groupId>
           <artifactId>testng</artifactId>
           <version>7.7.1</version>
           <scope>test</scope>
       </dependency>
-
-
-    
+      <dependency>
+          <groupId>io.cucumber</groupId>
+          <artifactId>cucumber-java</artifactId>
+          <version>7.16.1</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+      <dependency>
+          <groupId>io.cucumber</groupId>
+          <artifactId>cucumber-junit</artifactId>
+          <version>7.16.1</version>
+          <scope>test</scope>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/junit/junit -->
+      <!-- https://mvnrepository.com/artifact/org.testng/testng -->
   </dependencies>
 
   <build>
