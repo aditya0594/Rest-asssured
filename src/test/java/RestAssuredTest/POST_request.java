@@ -66,7 +66,7 @@ public class POST_request {
                 .then().assertThat().statusCode(200).body("msg", equalTo("Address successfully updated"));
 
 
-        // get appi
+         // get appi
         String updatedAddress = "Summer walk, USA";
         String getResponse = RestAssured.given().log().all().queryParam("key", "qaclick123").queryParam("place_id", "01a5abec5e97326f9f7f66a240aee923")
                 .when().get("/maps/api/place/get/json")
