@@ -11,7 +11,7 @@ public class GET_Request {
 		@Test
 		public void GetUserDetails()
 		{
-			RestAssured.given()
+			given()
 			.when()
 			.get("https://gorest.co.in/public-api/users/6")
 			.then()

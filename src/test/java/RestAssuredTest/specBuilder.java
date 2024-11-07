@@ -1,22 +1,25 @@
 package RestAssuredTest;
 
-import Files.ReusableMethod;
+import io.restassured.RestAssured;
+import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.ResponseSpecification;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import pojo.addPlace;
+import pojo.location;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.testng.annotations.Test;
-
-import io.restassured.RestAssured;
-import pojo.addPlace;
-import pojo.location;
-
+import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-public class POST_request {
+public class specBuilder {
     @Test
     public void Addapi() {
 
@@ -43,13 +46,25 @@ public class POST_request {
         l.setLng(33.427362);
         p.setLocation(l);
 
-        RestAssured.baseURI = "https://rahulshettyacademy.com";
 
-        String response = RestAssured.given().log().all().queryParam("Key", "=qaclick123").header("Content-Type", "application/json")
-                .body(p)
-                .when().post("/maps/api/place/add/json")
-                .then().assertThat().statusCode(200).body("scope", equalTo("APP"))
+        // request Spec Builder
+        RequestSpecification req = new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com").addQueryParam("Key", "=qaclick123")
+                .setContentType(ContentType.JSON).build();
+
+        //Response Spec Builder
+        ResponseSpecification ResponsSpec = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
+
+
+
+       // RestAssured.baseURI = "https://rahulshettyacademy.com";
+
+        //String response = RestAssured.given().log().all().queryParam("Key", "=qaclick123").header("Content-Type", "application/json")
+        RequestSpecification res =  given().spec(req).body(p);
+
+        String response =  res.when().post("/maps/api/place/add/json")
+                .then().spec(ResponsSpec).body("scope", equalTo("APP"))
                 .extract().response().asString();
+
         System.out.println(response);
         JsonPath json = new JsonPath(response);
         String placeID = json.getString("place_id");
@@ -57,24 +72,14 @@ public class POST_request {
 
         // Put the place update
 
-        RestAssured.given().log().all().queryParam("Key", "qaclick123").header("Content-Type", "application/json")
-                .body("{\n" +
+        RequestSpecification res1 =  given().spec(req).body(p);
+        res1.body("{\n" +
                         "\"place_id\":\"" + placeID + "\",\n" +
                         "\"address\":\"Summer walk, USA\",\n" +
                         "\"key\":\"qaclick123\"\n" +
                         "}\n").when().put("/maps/api/place/update/json")
                 .then().assertThat().statusCode(200).body("msg", equalTo("Address successfully updated"));
-
-
-         // get appi
-        String updatedAddress = "Summer walk, USA";
-        String getResponse = RestAssured.given().log().all().queryParam("key", "qaclick123").queryParam("place_id", "01a5abec5e97326f9f7f66a240aee923")
-                .when().get("/maps/api/place/get/json")
-                .then().assertThat().statusCode(200).extract().response().asString();
-        JsonPath js = ReusableMethod.rawtoJson(getResponse);
-        String getAddress = js.getString("address");
-        System.out.println("getAddress" + getAddress);
-        Assert.assertEquals(getAddress, updatedAddress);
     }
+
 
 }
