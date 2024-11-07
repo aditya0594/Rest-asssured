@@ -2,6 +2,7 @@ package Resources;
 
 import pojo.addPlace;
 import pojo.location;
+import pojo.sent_otp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,5 +29,13 @@ public class TestDataFields {
         l.setLng(33.427362);
         p.setLocation(l);
         return p;
+    }
+    public String deleteplacePayload(String placeID){
+        return "{\r\n    \"place_id\": \""+placeID+"\"\r\n}";
+    }
+    public sent_otp email_address(String consumerEmail){
+        sent_otp emailotp = new sent_otp();
+        emailotp.email_address(consumerEmail);
+        return emailotp;
     }
 }

@@ -12,6 +12,8 @@ import java.util.Properties;
 
 public class Utils {
     public static RequestSpecification requestspec;
+    public static RequestSpecification requestspecGAED;
+
     public RequestSpecification requestspecification() throws IOException {
 
         if(requestspec == null) {

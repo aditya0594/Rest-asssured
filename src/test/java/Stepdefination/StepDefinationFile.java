@@ -27,24 +27,24 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 public class StepDefinationFile extends Utils{
-    ResponseSpecification Responsespec;
+    static ResponseSpecification Responsespec;
     RequestSpecification res;
-    String place_id;
+    static String place_id;
     JsonPath js;
 
     String response;
     String response1;
 
-    TestDataFields addplacedata = new TestDataFields();
+    TestDataFields data = new TestDataFields();
 
     @Given("Add Place payload {string} {string}")
     public void add_place_payload(String name, String address) throws IOException {
+            //Response Spec Builder
+            Responsespec = new ResponseSpecBuilder()
+                    .expectStatusCode(200)
+                    .expectContentType(ContentType.JSON).build();
 
-        //Response Spec Builder
-        Responsespec = new ResponseSpecBuilder()
-                .expectStatusCode(200)
-                .expectContentType(ContentType.JSON).build();
-        res =  given().spec(requestspecification()).queryParams("key", "qaclick123").body(addplacedata.addplacePayload(name,address));
+        res =  given().spec(requestspecification()).queryParams("key", "qaclick123").body(data.addplacePayload(name,address));
 
     }
     @When("User call {string} with {string} http request")
@@ -64,10 +64,11 @@ public class StepDefinationFile extends Utils{
             System.out.println(response1);}
     }
 
-    @Then("Api call is success and status code {int} OK")
-    public void api_call_is_success_and_status_code_ok(Integer statusCode) {
+    @Then("Api call {string} is success and status code {int} OK")
+    public void api_call_is_success_and_status_code_ok(String resource, Integer statusCode) {
         // Write code here that turns the phrase above into concrete actions
-        int actualStatusCode = res.when().post("/maps/api/place/add/json").getStatusCode();
+        APIResources resourceAPI = APIResources.valueOf(resource);
+        int actualStatusCode = res.when().post(resourceAPI.getResource()).getStatusCode();
         assertEquals(statusCode.intValue(), actualStatusCode);
     }
     @Then("{string} in response body is {string}")
@@ -102,6 +103,14 @@ public class StepDefinationFile extends Utils{
         assertEquals(expectedName, actualName);
 
     }
+    @Given("Delete place payload")
+    public void delete_place_payload() throws IOException {
+        // Write code here that turns the phrase above into concrete actions
+        res = given().spec(requestspecification())
+                .body(data.deleteplacePayload(place_id));
 
-
+    }
 }
+
+
+
