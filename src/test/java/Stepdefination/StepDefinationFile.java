@@ -1,54 +1,45 @@
 package Stepdefination;
 
-import Files.ReusableMethod;
 import Resources.APIResources;
 import Resources.TestDataFields;
 import Resources.Utils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.RestAssured;
-import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
-import org.testng.Assert;
-import pojo.addPlace;
-import pojo.location;
+
 import static org.junit.Assert.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
 
 public class StepDefinationFile extends Utils{
     static ResponseSpecification Responsespec;
-    RequestSpecification res;
+     RequestSpecification res;
     static String place_id;
     JsonPath js;
-
-    String response;
-    String response1;
+    static String response;
+    static String response1;
 
     TestDataFields data = new TestDataFields();
 
-    @Given("Add Place payload {string} {string}")
-    public void add_place_payload(String name, String address) throws IOException {
-            //Response Spec Builder
-            Responsespec = new ResponseSpecBuilder()
-                    .expectStatusCode(200)
-                    .expectContentType(ContentType.JSON).build();
-
-        res =  given().spec(requestspecification()).queryParams("key", "qaclick123").body(data.addplacePayload(name,address));
-
-    }
+//    @Given("Add Place payload {string} {string}")
+//    public void add_place_payload(String name, String address) throws IOException {
+//            //Response SpecBuilder
+//            Responsespec = new ResponseSpecBuilder()
+//                    .expectStatusCode(200)
+//                    .expectContentType(ContentType.JSON).build();
+//
+//        res =  given().spec(requestspecification()).queryParams("key", "qaclick123").body(data.addplacePayload(name,address));
+//
+//    }
     @When("User call {string} with {string} http request")
-    public void user_call_with_http_request(String resource, String method) {
+    public String user_call_with_http_request(String resource, String method) {
        APIResources resourceAPI = APIResources.valueOf(resource);
         System.out.println("Resoures API : "  + resourceAPI.getResource());
        /*  response =  res.when().post(resourceAPI.getResouce())
@@ -62,6 +53,7 @@ public class StepDefinationFile extends Utils{
              response1 =  res.when().get(resourceAPI.getResource())
                      .then().spec(Responsespec).extract().response().asString();
             System.out.println(response1);}
+         return response;
     }
 
     @Then("Api call {string} is success and status code {int} OK")
@@ -108,6 +100,20 @@ public class StepDefinationFile extends Utils{
         // Write code here that turns the phrase above into concrete actions
         res = given().spec(requestspecification())
                 .body(data.deleteplacePayload(place_id));
+
+    }
+    @Given("Sent otp payload")
+    public void sent_otp_payload() throws IOException {
+//        Responsespec = new ResponseSpecBuilder()
+//                .expectStatusCode(200)
+//                .expectContentType(ContentType.JSON).build();
+//        res =  given().spec(requestspecification()).body(data.email_address("adityapawar2@yopmail.com"));
+        //Response SpecBuilder
+        Responsespec = new ResponseSpecBuilder()
+                .expectStatusCode(200)
+                .expectContentType(ContentType.JSON).build();
+
+        res =  given().spec(requestspecification()).body(data.email_address("aditya@yopmail.com"));
 
     }
 }
