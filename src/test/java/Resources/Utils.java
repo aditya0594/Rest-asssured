@@ -19,11 +19,12 @@ public class Utils {
         if(requestspec == null) {
             // here this printStream is a object which asking for the lRequestLoggingFilter.logRequestTo()
             PrintStream log = new PrintStream(new FileOutputStream("Logging.txt")); // here we are creating the file of logs
-            requestspec = new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com")
+            requestspec = new RequestSpecBuilder().setBaseUri("http://ec2-3-7-14-188.ap-south-1.compute.amazonaws.com/qa/api/v1")
                     //.addQueryParam("Key", "qaclick123")
                     .addFilter(RequestLoggingFilter.logRequestTo(log))
                     .addFilter(ResponseLoggingFilter.logResponseTo(log))//this is for the logs in the text file
-                    .setContentType(ContentType.JSON).build();
+                    .setContentType(ContentType.JSON)
+                    .build();
             return requestspec;
         }
         return requestspec;

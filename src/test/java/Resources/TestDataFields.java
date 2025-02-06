@@ -1,8 +1,8 @@
 package Resources;
 
+import pojo.SentOTP;
 import pojo.addPlace;
 import pojo.location;
-import pojo.sent_otp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,9 +33,10 @@ public class TestDataFields {
     public String deleteplacePayload(String placeID){
         return "{\r\n    \"place_id\": \""+placeID+"\"\r\n}";
     }
-    public sent_otp email_address(String consumerEmail){
-        sent_otp emailotp = new sent_otp();
-        emailotp.email_address(consumerEmail);
+    public SentOTP email_address(String consumerEmail){
+        SentOTP emailotp = new SentOTP();
+        emailotp.setEmail_address(consumerEmail);
         return emailotp;
     }
+
 }
