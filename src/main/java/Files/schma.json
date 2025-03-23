@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string"
+    },
+    "place_id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{32}$"
+    },
+    "scope": {
+      "type": "string",
+      "enum": ["APP"]
+    },
+    "reference": {
+      "type": "string",
+      "minLength": 64,
+      "maxLength": 64
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{32}$"
+    }
+  },
+  "required": ["status", "place_id", "scope", "reference", "id"]
+}

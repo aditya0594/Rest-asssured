@@ -5,6 +5,7 @@ import io.restassured.path.json.JsonPath;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,20 @@ import io.restassured.RestAssured;
 import pojo.addPlace;
 import pojo.location;
 
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.Matchers.equalTo;
+
+/***
+ * Hamcrest Libraries consist of :
+ equalTo(x)	Checks if a value equals x	.body("userId", equalTo(1))
+ containsString(x)	Checks if a value contains x	.body("title", containsString("Java"))
+ hasItem(x)	Checks if a list contains an item x	.body("userId", hasItem(2))
+ hasItems(x, y, z)	Checks if a list contains multiple values	.body("id", hasItems(1, 2, 3))
+ greaterThan(x)	Ensures the value is greater than x	.body("size()", greaterThan(5))
+ lessThan(x)	Ensures the value is less than x	.body("size()", lessThan(100))
+ not(equalTo(x))	Ensures the value is not equal to x	.body("userId", not(equalTo(3)))
+ */
 
 public class POST_request {
     @Test
@@ -47,16 +61,19 @@ public class POST_request {
 
         String response = RestAssured.given().log().all().queryParam("Key", "=qaclick123").header("Content-Type", "application/json")
                 .body(p)
-                .when().post("/maps/api/place/add/json")
-                .then().assertThat().statusCode(200).body("scope", equalTo("APP"))
-                .extract().response().asString();
-        System.out.println(response);
+                .when()
+                .post("/maps/api/place/add/json")
+                .then().assertThat().statusCode(200)
+                .body("scope", equalTo("APP"))
+                //.body(matchesJsonSchema(new File("src/test/resources/schema.json")))
+                .extract().response().path("place_id");
+        System.out.println("This is the reponse using the path "  + response);
         JsonPath json = new JsonPath(response);
         String placeID = json.getString("place_id");
         System.out.println("extracted place ID " + placeID);
 
-        // Put the place update
 
+        // Put the place update
         RestAssured.given().log().all().queryParam("Key", "qaclick123").header("Content-Type", "application/json")
                 .body("{\n" +
                         "\"place_id\":\"" + placeID + "\",\n" +
@@ -69,8 +86,10 @@ public class POST_request {
          // get appi
         String updatedAddress = "Summer walk, USA";
         String getResponse = RestAssured.given().log().all().queryParam("key", "qaclick123").queryParam("place_id", "01a5abec5e97326f9f7f66a240aee923")
-                .when().get("/maps/api/place/get/json")
-                .then().assertThat().statusCode(200).extract().response().asString();
+                .when()
+                .get("/maps/api/place/get/json")
+                .then()
+                .assertThat().statusCode(200).extract().response().asString();
         JsonPath js = ReusableMethod.rawtoJson(getResponse);
         String getAddress = js.getString("address");
         System.out.println("getAddress" + getAddress);

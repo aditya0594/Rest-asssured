@@ -1,75 +1,98 @@
 Request method:	POST
-Request URI:	http://ec2-3-7-14-188.ap-south-1.compute.amazonaws.com/qa/api/v1/user/send-otp
+Request URI:	https://marketplace.qa.gaedkeeper.com/qa/api/v1/project/sell-add
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
-Headers:		Accept=*/*
+Headers:		Accept=application/json
+				x-sso-auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkaXR5YUB5b3BtYWlsLmNvbSIsInVzZXJJZCI6MjUsIm1vYmlsZV9udW1iZXIiOm51bGwsImlhdCI6MTc0MjQ2NjMzMiwiZXhwIjoxNzc0MDIzOTMyfQ.BVb6tdLU57Qil-0JlFeaJKG3-rDgzAYnMN1ZZIWYaF8
 				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "email_address": "aditya@yopmail.com"
+    "project_name": "Automation1",
+    "project_description": "",
+    "master_project_type_id": 1,
+    "master_project_category_id": 2,
+    "location": "Chatrapati Square, Sawarkar Nagar, Vivekanand Nagar, Nagpur, Maharashtra",
+    "latitude": 21.1107592,
+    "longitude": 79.07008859999999,
+    "master_country_id": 103,
+    "bid_expiry_day": 90,
+    "master_agreement_type_id": 1,
+    "cost_sharing": 100,
+    "master_cost_sharing_unit_id": 125,
+    "average_monthly_payment": 1,
+    "amp_master_currency_id": 125,
+    "leasing_tariff": null,
+    "lt_master_currency_id": 125,
+    "project_capacity": 1000,
+    "master_capacity_unit_id": 2,
+    "tenure_length": 1,
+    "tenure_age": 1,
+    "master_module_specification_id": 5,
+    "module_brand": "brand",
+    "master_grid_connection_id": 3,
+    "current_tenancy_age": 100,
+    "mounting_system": "Mounting System",
+    "installation_date": "2025-03-05",
+    "generation_data": "",
+    "generation_data_unit": 2,
+    "maintenance_covered_under": true,
+    "temporary_occupation_permit_date": "2025-03-04",
+    "avg_system_eff": 10,
+    "avg_system_eff_unit": "%",
+    "degeneration_rate": 1,
+    "sell_budget": 150000,
+    "sbu_master_currency_id": 125,
+    "addon_feature": "",
+    "video_url": "https://www.youtube.com/watch?v=Xf0yP-kNyXQ",
+    "project_images": [
+        {
+            "attachment": null,
+            "attachment_title": null,
+            "extension": null,
+            "_thumbnail": false
+        },
+        {
+            "attachment": null,
+            "attachment_title": null,
+            "extension": null,
+            "_thumbnail": false
+        },
+        {
+            "attachment": null,
+            "attachment_title": null,
+            "extension": null,
+            "_thumbnail": false
+        },
+        {
+            "attachment": null,
+            "attachment_title": null,
+            "extension": null,
+            "_thumbnail": false
+        }
+    ],
+    "project_documents": [
+        
+    ]
 }
-HTTP/1.1 200 OK
-Date: Wed, 05 Feb 2025 20:08:31 GMT
+HTTP/1.1 401 Unauthorized
+Date: Fri, 21 Mar 2025 07:55:47 GMT
 Server: Apache/2.4.52 (Ubuntu)
 X-Powered-By: Express
 Access-Control-Allow-Origin: *
 Content-Type: application/json; charset=utf-8
-Content-Length: 248
-ETag: W/"f8-5pET8LjzSPVVBjkLzphgS5tc2fg"
-Keep-Alive: timeout=5, max=100
-Connection: Keep-Alive
-
-{
-    "status": true,
-    "code": 200,
-    "message": "OTP send successfully.",
-    "data": {
-        "id": 33,
-        "email_address": "aditya@yopmail.com",
-        "code": 476410,
-        "expire_on": "2025-02-05T20:18:31.524Z",
-        "updated_at": "2025-02-05T20:08:31.524Z",
-        "created_at": "2025-02-05T20:08:31.524Z"
-    }
-}
-Request method:	POST
-Request URI:	http://ec2-3-7-14-188.ap-south-1.compute.amazonaws.com/qa/api/v1/user/send-otp
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	<none>
-Headers:		Accept=*/*
-				Content-Type=application/json; charset=UTF-8
-Cookies:		<none>
-Multiparts:		<none>
-Body:
-{
-    "email_address": "aditya@yopmail.com"
-}
-HTTP/1.1 200 OK
-Date: Wed, 05 Feb 2025 20:08:31 GMT
-Server: Apache/2.4.52 (Ubuntu)
-X-Powered-By: Express
-Access-Control-Allow-Origin: *
-Content-Type: application/json; charset=utf-8
-Content-Length: 116
-ETag: W/"74-4pbsaqPMu++MFtPeg8lNeR9N8aU"
+Content-Length: 133
+ETag: W/"85-2GEQQJ/EsSrmVpInMb1WcvCEc9Q"
 Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
 
 {
     "status": false,
-    "code": 200,
-    "message": "OTP already sent.",
-    "data": {
-        "OTP": "",
-        "otp_timer": "1 Minutes",
-        "error_code": 102
-    }
+    "code": 401,
+    "message": "Something wrong with token, Error:- AxiosError: Request failed with status code 401",
+    "data": ""
 }
