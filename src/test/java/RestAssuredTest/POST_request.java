@@ -51,6 +51,8 @@ public class POST_request {
                 .then().assertThat().statusCode(200).body("scope", equalTo("APP"))
                 .extract().response().asString();
         System.out.println(response);
+
+        // jsonPath is a class for parsing the json.
         JsonPath json = new JsonPath(response);
         String placeID = json.getString("place_id");
         System.out.println("extracted place ID " + placeID);
@@ -68,13 +70,18 @@ public class POST_request {
 
          // get appi
         String updatedAddress = "Summer walk, USA";
-        String getResponse = RestAssured.given().log().all().queryParam("key", "qaclick123").queryParam("place_id", "01a5abec5e97326f9f7f66a240aee923")
+        String getResponse = RestAssured.given().log().all()
+                .queryParam("key", "qaclick123")
+                .queryParam("place_id", "01a5abec5e97326f9f7f66a240aee923")
                 .when().get("/maps/api/place/get/json")
                 .then().assertThat().statusCode(200).extract().response().asString();
+
         JsonPath js = ReusableMethod.rawtoJson(getResponse);
         String getAddress = js.getString("address");
         System.out.println("getAddress" + getAddress);
         Assert.assertEquals(getAddress, updatedAddress);
+
+
     }
 
 }
