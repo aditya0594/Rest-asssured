@@ -44,7 +44,7 @@ public class StepDefinationFile extends Utils{
                     .expectStatusCode(200)
                     .expectContentType(ContentType.JSON).build();
 
-        res =  given().spec(requestspecification()).queryParams("key", "qaclick123").body(data.addplacePayload(name,address));
+        res =  given().spec(requestspecification("")).queryParams("key", "qaclick123").body(data.addplacePayload(name,address));
 
     }
     @When("User call {string} with {string} http request")
@@ -89,7 +89,7 @@ public class StepDefinationFile extends Utils{
         place_id = js.get("place_id");
         System.out.println("Place ID is : "+ place_id);
 
-        res =  given().spec(requestspecification()).queryParams("key", "qaclick123").queryParam("place_id",place_id);
+        res =  given().spec(requestspecification("")).queryParams("key", "qaclick123").queryParam("place_id",place_id);
         user_call_with_http_request(resourceGet,"get");
         // Parse the GET response
         JsonPath js1 = new JsonPath(response1); // Ensure you use response1 for the GET call's response
@@ -106,7 +106,7 @@ public class StepDefinationFile extends Utils{
     @Given("Delete place payload")
     public void delete_place_payload() throws IOException {
         // Write code here that turns the phrase above into concrete actions
-        res = given().spec(requestspecification())
+        res = given().spec(requestspecification(""))
                 .body(data.deleteplacePayload(place_id));
 
     }
