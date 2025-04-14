@@ -14,43 +14,51 @@ public class StepDefinationConsumer extends Utils {
 
 
 
+    RequestSpecification res;
 
-    private StepDefinationFile step; // Lazy initialization
+    TestDataFields data = new TestDataFields();
+    //StepDefinationFile step = new StepDefinationFile(); old
 
-    static String otp;
-    public static String otpget(){
-        return otp;
-    }
+    private StepDefinationFile step;
 
     public StepDefinationConsumer() {
-        // Constructor does not initialize StepDefinationFile
+        this.step = new StepDefinationFile();
+    }
+    private int OTP;
+    public int getOtp() {
+        return OTP;
     }
 
-    public StepDefinationFile getStep() {
-        if (step == null) {
-            step = new StepDefinationFile(); // Initialize only when needed
-        }
-        return step;
-    }
-
-//    public String getOtp() {
-//        return OTP;
+//    @Given("Sent otp payload")
+//    public void sent_otp_payload() throws IOException {
+////        Responsespec = new ResponseSpecBuilder()
+////                .expectStatusCode(200)
+////                .expectContentType(ContentType.JSON).build();
+////        res =  given().spec(requestspecification()).body(data.email_address("adityapawar2@yopmail.com"));
+//        //Response SpecBuilder
+//        Responsespec = new ResponseSpecBuilder()
+//                .expectStatusCode(200)
+//                .expectContentType(ContentType.JSON).build();
+//
+//        TestContext.res =  given().spec(requestspecification()).body(data.email_address("aditya@yopmail.com"));
+//
 //    }
-
     @Then("Get the generate OTP from the response")
     public void get_the_generate_otp_from_the_response() throws InterruptedException {
-        System.out.println(getStep().response);
-        JsonPath js = new JsonPath(getStep().response);
-        otp = js.getString("data.code");
-        System.out.println("Extracted otp: " + otp);
+
+        System.out.println(step.response);
+        JsonPath js = new JsonPath(step.response);
+        int otp = js.getInt("data.code");
+        System.out.println("Extracted otp" + ":" + otp);
+        OTP = otp;
         Thread.sleep(3000);
     }
 
     @Then("Get the Logintoken from the response")
     public void get_the_logintoken_from_the_response() {
         // Write code here that turns the phrase above into concrete actions
-        System.out.println(step.response2);
-        JsonPath js = new JsonPath(step.response2);
+        System.out.println(step.response);
+        JsonPath js = new JsonPath(step.response);
         String LoginToken = js.getString("data.loginToken");
 
         System.out.println("Extracted LoginToken :" + LoginToken);
