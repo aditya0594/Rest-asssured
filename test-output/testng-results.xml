@@ -6,12 +6,12 @@
     <groups>
     </groups>
     <test started-at="2021-03-03T00:29:51 IST" name="Default test" finished-at="2021-03-03T00:29:57 IST" duration-ms="6118">
-      <class name="RestAssuredTest.POST_request">
-        <test-method is-config="true" signature="POSTdata()[pri:0, instance:RestAssuredTest.POST_request@10feca44]" started-at="2021-03-03T00:29:51 IST" name="POSTdata" finished-at="2021-03-03T00:29:53 IST" duration-ms="1774" status="PASS">
+      <class name="RestAssuredPra.POST_request">
+        <test-method is-config="true" signature="POSTdata()[pri:0, instance:RestAssuredPra.POST_request@10feca44]" started-at="2021-03-03T00:29:51 IST" name="POSTdata" finished-at="2021-03-03T00:29:53 IST" duration-ms="1774" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- POSTdata -->
-        <test-method signature="testPost()[pri:0, instance:RestAssuredTest.POST_request@10feca44]" started-at="2021-03-03T00:29:53 IST" name="testPost" finished-at="2021-03-03T00:29:57 IST" duration-ms="4244" status="FAIL">
+        <test-method signature="testPost()[pri:0, instance:RestAssuredPra.POST_request@10feca44]" started-at="2021-03-03T00:29:53 IST" name="testPost" finished-at="2021-03-03T00:29:57 IST" duration-ms="4244" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[1 expectation failed.
@@ -19,7 +19,7 @@ Expected status code <201> but was <200>.
 ]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: 1 expectation failed.
+                <![CDATA[java.lang.AssertionError: 1 expectation failed.
 Expected status code <201> but was <200>.
 
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -67,7 +67,7 @@ at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)
 at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
 at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
 at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
-at RestAssuredTest.POST_request.testPost(POST_request.java:39)
+at RestAssuredPra.POST_request.testPost(POST_request.java:39)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -102,7 +102,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testPost -->
-      </class> <!-- RestAssuredTest.POST_request -->
+      </class> <!-- RestAssuredPra.POST_request -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -1,14 +1,11 @@
-package RestAssuredTest;
+package RestAssuredPra;
 
-import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pojo.addPlace;
 import pojo.location;

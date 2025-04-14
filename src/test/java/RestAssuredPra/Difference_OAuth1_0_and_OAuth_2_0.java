@@ -1,4 +1,4 @@
-package RestAssuredTest;
+package RestAssuredPra;
 
 public class Difference_OAuth1_0_and_OAuth_2_0 {
 

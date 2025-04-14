@@ -1,4 +1,4 @@
-package RestAssuredTest;
+package RestAssuredPra;
 
 import Files.Payload;
 import io.restassured.path.json.JsonPath;

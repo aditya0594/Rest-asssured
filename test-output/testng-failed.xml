@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="RestAssuredTest.POST_request">
+      <class name="RestAssuredPra.POST_request">
         <methods>
           <include name="testPost"/>
           <include name="POSTdata"/>
         </methods>
-      </class> <!-- RestAssuredTest.POST_request -->
+      </class> <!-- RestAssuredPra.POST_request -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

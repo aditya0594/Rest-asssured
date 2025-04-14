@@ -1,7 +1,6 @@
-package RestAssuredTest;
+package RestAssuredPra;
 
 import Files.Payload;
-import Files.ReusableMethod;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import org.testng.annotations.DataProvider;
@@ -9,7 +8,6 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import static io.restassured.RestAssured.given;

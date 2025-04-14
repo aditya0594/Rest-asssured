@@ -1,6 +1,5 @@
-package RestAssuredTest;
+package RestAssuredPra;
 
-import io.restassured.RestAssured;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.*;

@@ -1,9 +1,8 @@
-package RestAssuredTest;
+package RestAssuredPra;
 
 import Files.ReusableMethod;
 import io.restassured.path.json.JsonPath;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -14,15 +14,15 @@ public class StepDefinationConsumer extends Utils {
 
 
 
-    RequestSpecification res;
+
 
     TestDataFields data = new TestDataFields();
     //StepDefinationFile step = new StepDefinationFile(); old
 
-    private StepDefinationFile step;
+    String response = StepDefinationFile.response;
 
     public StepDefinationConsumer() {
-        this.step = new StepDefinationFile();
+
     }
     private int OTP;
     public int getOtp() {
@@ -46,30 +46,20 @@ public class StepDefinationConsumer extends Utils {
     @Then("Get the generate OTP from the response")
     public void get_the_generate_otp_from_the_response() throws InterruptedException {
 
-        System.out.println(step.response);
-        JsonPath js = new JsonPath(step.response);
+        System.out.println(response);
+        JsonPath js = new JsonPath(response);
         int otp = js.getInt("data.code");
         System.out.println("Extracted otp" + ":" + otp);
         OTP = otp;
         Thread.sleep(3000);
     }
 
-    @Then("Get the Logintoken from the response")
-    public void get_the_logintoken_from_the_response() {
-        // Write code here that turns the phrase above into concrete actions
-        System.out.println(step.response);
-        JsonPath js = new JsonPath(step.response);
-        String LoginToken = js.getString("data.loginToken");
-
-        System.out.println("Extracted LoginToken :" + LoginToken);
-        writeExcel("Tokens",1,0,LoginToken);
-    }
     @Then("Get the Logintoken from the response and save in the excel")
     public void get_the_logintoken_from_the_response_and_save_in_the_excel() {
-        System.out.println(step.response);
-        JsonPath js = new JsonPath(step.response);
-        String LoginToken = js.getString("data.authToken");
-        writeExcel("Tokens",1,3,LoginToken);
+        System.out.println("This is for the extraction of data " + response);
+        JsonPath js = new JsonPath(response);
+        String LoginToken = js.get("data.authToken");
+        writeExcel("Tokens",1,2,LoginToken);
     }
 
 
