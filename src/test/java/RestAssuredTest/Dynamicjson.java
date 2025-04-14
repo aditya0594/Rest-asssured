@@ -53,7 +53,7 @@ public class Dynamicjson {
                 .when().post("/Library/Addbook.php")
                 .then().assertThat().log().all().statusCode(200).extract().response().asString();
         JsonPath jspath = new JsonPath(response);
-        System.out.println(jspath.get("ID").toString());
+        System.out.println(jspath.get("ID").toString());  //
 
 
     }
