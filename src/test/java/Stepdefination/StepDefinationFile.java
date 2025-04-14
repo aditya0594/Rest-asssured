@@ -3,6 +3,7 @@ package Stepdefination;
 import Resources.APIResources;
 import Resources.TestDataFields;
 import Resources.Utils;
+import com.google.gson.Gson;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,9 +12,11 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import pojo.VerifyOTP;
 
 import static org.junit.Assert.*;
 
+import java.io.File;
 import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
@@ -124,18 +127,36 @@ public class StepDefinationFile extends Utils{
         Responsespec = new ResponseSpecBuilder()
                 .expectStatusCode(200)
                 .expectContentType(ContentType.JSON).build();
-        res =  given().spec(requestspecification("https://qa.gaedkeeper.com/qa/api/v1")).body(data.SentOtp("aditya@yopmail.com"));
+        res =  given().spec(requestspecification("https://qa.gaedkeeper.com/qa/api/v1")).body(data.SentOtp("adityapawar@yopmail.com"));
 
     }
-    @Given("Verify otp payload")
+   /* @Given("Verify otp payload")
     public void verify_otp_payload() throws IOException, InterruptedException {
-        int otp = StepDefinationConsumer.OTP;
+        StepDefinationConsumer StepDefinationConsumer =new StepDefinationConsumer();
+        String otp = "283320";//StepDefinationConsumer.getOtp();
         System.out.println("this the otp : " + otp);
+        Responsespec = new ResponseSpecBuilder()
+                .expectStatusCode(422)
+                .expectContentType(ContentType.JSON).build();
+        res =  given().spec(requestspecification("https://qa.gaedkeeper.com/qa/api/v1").body(data.VerifyOTP(otp,"adityapawar@yopmail.com")));
+        System.out.println("This is the property of baseurl" + properties("sos_baseurl"));//Thread.sleep(3000);
+    }*/
+   @Given("Verify otp payload")
+   public void verify_otp_payload() throws IOException, InterruptedException {
+       StepDefinationConsumer StepDefinationConsumer = new StepDefinationConsumer();
+       String otp = "226815"; // Ensure this OTP is correct
+       System.out.println("this the otp : " + otp);
        Responsespec = new ResponseSpecBuilder()
                .expectContentType(ContentType.JSON).build();
-        res =  given().spec(requestspecification(properties("sos_baseurl"))).body(data.VerifyOTP(otp,"aditya@yopmail.com"));
-        System.out.println("This is the property of baseurl" + properties("sos_baseurl"));//Thread.sleep(3000);
-    }
+       VerifyOTP verifyOtpPayload = data.VerifyOTP(otp, "adityapawar@yopmail.com");
+       Gson gson = new Gson();
+       String jsonPayload = gson.toJson(verifyOtpPayload);
+       System.out.println("JSON Payload: " + jsonPayload);
+
+       res = given().spec(requestspecification("https://qa.gaedkeeper.com/qa/api/v1"))
+               .body(jsonPayload);
+       System.out.println("This is the property of baseurl" + properties("sos_baseurl"));
+   }
     @Given("Login consumer payload")
     public void login_consumer_payload() throws IOException {
         String consumerLogintoken = readExcel("Tokens",1,0);
@@ -146,7 +167,7 @@ public class StepDefinationFile extends Utils{
         Responsespec = new ResponseSpecBuilder()
                 .expectStatusCode(201)
                 .expectContentType(ContentType.JSON).build();
-        res =  given().spec(requestspecification(properties("sos_baseurl"))).header("x-sso-auth",consumerLogintoken).body(data.consumerLogin("aditya@yopmail.com"));
+        res =  given().spec(requestspecification("https://qa.gaedkeeper.com/qa/api/v1").header("x-sso-auth",consumerLogintoken).body(data.consumerLogin("adityapawar@yopmail.com")));
 
     }
 
@@ -181,11 +202,12 @@ public class StepDefinationFile extends Utils{
     @Given("Payload for the buy and sell project")
     public void payload_for_the_buy_and_sell_project() throws IOException {
         String loginToken = readExcel("Tokens",1,3);
+        File jsonFile = new File("src/main/java/pojo/BuySell_project_JSON.json");
         System.out.println("The loginToken from the excel : "+ loginToken);// writeExcel("Tokens",1,3,LoginToken);
         Responsespec = new ResponseSpecBuilder()
                 .expectStatusCode(200)
                 .expectContentType(ContentType.JSON).build();
-        res =  given().spec(requestspecification("https://marketplace.qa.gaedkeeper.com/qa/api/v1")).header("x-sso-auth",loginToken).body(data.createProject("Automation1"));
+        res =  given().spec(requestspecification("https://marketplace.qa.gaedkeeper.com/qa/api/v1")).header("x-sso-auth",loginToken).body(jsonFile);
     }
 }
 

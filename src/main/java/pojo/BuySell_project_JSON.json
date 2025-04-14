@@ -1,0 +1,66 @@
+{
+  "project_name": "Project 123",
+  "project_description": "",
+  "master_project_type_id": 1,
+  "master_project_category_id": 2,
+  "location": "Chatrapati Square, Sawarkar Nagar, Vivekanand Nagar, Nagpur, Maharashtra",
+  "latitude": 21.1107592,
+  "longitude": 79.07008859999999,
+  "master_country_id": 103,
+  "bid_expiry_day": 90,
+  "master_agreement_type_id": 1,
+  "cost_sharing": 100,
+  "master_cost_sharing_unit_id": 125,
+  "average_monthly_payment": 1,
+  "amp_master_currency_id": 125,
+  "leasing_tariff": null,
+  "lt_master_currency_id": 125,
+  "project_capacity": 1000,
+  "master_capacity_unit_id": 2,
+  "tenure_length": 1,
+  "tenure_age": 1,
+  "master_module_specification_id": 5,
+  "module_brand": "brand",
+  "master_grid_connection_id": 3,
+  "current_tenancy_age": 100,
+  "mounting_system": "Mounting System",
+  "installation_date": "2025-03-05",
+  "generation_data": "",
+  "generation_data_unit": 2,
+  "maintenance_covered_under": true,
+  "temporary_occupation_permit_date": "2025-03-04",
+  "avg_system_eff": 10,
+  "avg_system_eff_unit": "%",
+  "degeneration_rate": 1,
+  "sell_budget": 150000,
+  "sbu_master_currency_id": 125,
+  "addon_feature": "",
+  "video_url": "https://www.youtube.com/watch?v=Xf0yP-kNyXQ",
+  "project_images": [
+    {
+      "attachment": "{{img_base64}}",
+      "attachment_title": "IMG 1.png",
+      "extension": "png",
+      "is_thumbnail": true
+    },
+    {
+      "attachment": "{{img_base64}}",
+      "attachment_title": "IMG 2.png",
+      "extension": "png",
+      "is_thumbnail": false
+    },
+    {
+      "attachment": "{{img_base64}}",
+      "attachment_title": "IMG 3.png",
+      "extension": "png",
+      "is_thumbnail": false
+    },
+    {
+      "attachment": "{{img_base64}}",
+      "attachment_title": "IMG 5.png",
+      "extension": "png",
+      "is_thumbnail": false
+    }
+  ],
+  "project_documents": []
+}

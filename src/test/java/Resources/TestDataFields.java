@@ -36,13 +36,19 @@ public class TestDataFields {
         emailotp.setEmail_address(consumerEmail);
         return emailotp;
     }
-    public VerifyOTP VerifyOTP(int otp, String email){
+   /* public VerifyOTP VerifyOTP(String otp, String email){
         VerifyOTP verifyotp = new VerifyOTP();
-        verifyotp.setOtp(String.valueOf(otp));
+        verifyotp.setOtp(otp);
         verifyotp.setEmail_address(email);
         return verifyotp;
     }
-
+*/
+   public VerifyOTP VerifyOTP(String otp, String email) {
+       VerifyOTP verifyotp = new VerifyOTP();
+       verifyotp.setOtp(otp);
+       verifyotp.setEmail_address(email);
+       return verifyotp;
+   }
     public ConsumerLogin consumerLogin(String consumerEmail){
         ConsumerLogin emailotp = new ConsumerLogin();
         emailotp.setEmail_address(consumerEmail);

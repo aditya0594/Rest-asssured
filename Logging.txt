@@ -1,98 +1,141 @@
 Request method:	POST
-Request URI:	https://marketplace.qa.gaedkeeper.com/qa/api/v1/project/sell-add
+Request URI:	https://qa.gaedkeeper.com/qa/api/v1/user/send-otp
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
 Headers:		Accept=application/json
-				x-sso-auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkaXR5YUB5b3BtYWlsLmNvbSIsInVzZXJJZCI6MjUsIm1vYmlsZV9udW1iZXIiOm51bGwsImlhdCI6MTc0MjQ2NjMzMiwiZXhwIjoxNzc0MDIzOTMyfQ.BVb6tdLU57Qil-0JlFeaJKG3-rDgzAYnMN1ZZIWYaF8
 				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "project_name": "Automation1",
-    "project_description": "",
-    "master_project_type_id": 1,
-    "master_project_category_id": 2,
-    "location": "Chatrapati Square, Sawarkar Nagar, Vivekanand Nagar, Nagpur, Maharashtra",
-    "latitude": 21.1107592,
-    "longitude": 79.07008859999999,
-    "master_country_id": 103,
-    "bid_expiry_day": 90,
-    "master_agreement_type_id": 1,
-    "cost_sharing": 100,
-    "master_cost_sharing_unit_id": 125,
-    "average_monthly_payment": 1,
-    "amp_master_currency_id": 125,
-    "leasing_tariff": null,
-    "lt_master_currency_id": 125,
-    "project_capacity": 1000,
-    "master_capacity_unit_id": 2,
-    "tenure_length": 1,
-    "tenure_age": 1,
-    "master_module_specification_id": 5,
-    "module_brand": "brand",
-    "master_grid_connection_id": 3,
-    "current_tenancy_age": 100,
-    "mounting_system": "Mounting System",
-    "installation_date": "2025-03-05",
-    "generation_data": "",
-    "generation_data_unit": 2,
-    "maintenance_covered_under": true,
-    "temporary_occupation_permit_date": "2025-03-04",
-    "avg_system_eff": 10,
-    "avg_system_eff_unit": "%",
-    "degeneration_rate": 1,
-    "sell_budget": 150000,
-    "sbu_master_currency_id": 125,
-    "addon_feature": "",
-    "video_url": "https://www.youtube.com/watch?v=Xf0yP-kNyXQ",
-    "project_images": [
-        {
-            "attachment": null,
-            "attachment_title": null,
-            "extension": null,
-            "_thumbnail": false
-        },
-        {
-            "attachment": null,
-            "attachment_title": null,
-            "extension": null,
-            "_thumbnail": false
-        },
-        {
-            "attachment": null,
-            "attachment_title": null,
-            "extension": null,
-            "_thumbnail": false
-        },
-        {
-            "attachment": null,
-            "attachment_title": null,
-            "extension": null,
-            "_thumbnail": false
-        }
-    ],
-    "project_documents": [
-        
-    ]
+    "email_address": "adityapawar@yopmail.com"
 }
-HTTP/1.1 401 Unauthorized
-Date: Fri, 21 Mar 2025 07:55:47 GMT
-Server: Apache/2.4.52 (Ubuntu)
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Tue, 25 Mar 2025 08:10:19 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 254
+Connection: keep-alive
 X-Powered-By: Express
 Access-Control-Allow-Origin: *
+ETag: W/"fe-AvaCHe+X5BvJs25dANoBNto9q8c"
+
+{
+    "status": true,
+    "code": 200,
+    "message": "OTP send successfully.",
+    "data": {
+        "id": 620,
+        "email_address": "adityapawar@yopmail.com",
+        "code": 772118,
+        "expire_on": "2025-03-25T08:20:18.968Z",
+        "updated_at": "2025-03-25T08:10:18.969Z",
+        "created_at": "2025-03-25T08:10:18.969Z"
+    }
+}
+Request method:	POST
+Request URI:	https://qa.gaedkeeper.com/qa/api/v1/user/send-otp
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "email_address": "adityapawar@yopmail.com"
+}
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Tue, 25 Mar 2025 08:10:20 GMT
 Content-Type: application/json; charset=utf-8
-Content-Length: 133
-ETag: W/"85-2GEQQJ/EsSrmVpInMb1WcvCEc9Q"
-Keep-Alive: timeout=5, max=100
-Connection: Keep-Alive
+Content-Length: 254
+Connection: keep-alive
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+ETag: W/"fe-WureQ+qjLCHzAxzUeYfXpfJLEJw"
+
+{
+    "status": true,
+    "code": 200,
+    "message": "OTP send successfully.",
+    "data": {
+        "id": 621,
+        "email_address": "adityapawar@yopmail.com",
+        "code": 303034,
+        "expire_on": "2025-03-25T08:20:20.329Z",
+        "updated_at": "2025-03-25T08:10:20.329Z",
+        "created_at": "2025-03-25T08:10:20.329Z"
+    }
+}
+Request method:	POST
+Request URI:	https://qa.gaedkeeper.com/qa/api/v1/user/verify-otp
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "email_address": "adityapawar@yopmail.com",
+    "otp": "226815"
+}
+HTTP/1.1 422 Unprocessable Entity
+Server: nginx/1.18.0 (Ubuntu)
+Date: Tue, 25 Mar 2025 08:10:26 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 92
+Connection: keep-alive
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+ETag: W/"5c-JWWD+mp9ejVRaGG80O7BFtRmZS8"
+
+{
+    "status": false,
+    "code": 422,
+    "message": "OTP Verify failed, Please try with another",
+    "data": {
+        
+    }
+}
+Request method:	POST
+Request URI:	https://qa.gaedkeeper.com/qa/api/v1/user/login
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json
+				x-sso-auth=
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "email_address": "adityapawar@yopmail.com"
+}
+HTTP/1.1 401 Unauthorized
+Server: nginx/1.18.0 (Ubuntu)
+Date: Tue, 25 Mar 2025 08:10:32 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 95
+Connection: keep-alive
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+ETag: W/"5f-ZTfEiDoxg4in5d2xbd73f7mDL/k"
 
 {
     "status": false,
     "code": 401,
-    "message": "Something wrong with token, Error:- AxiosError: Request failed with status code 401",
-    "data": ""
+    "message": "Unauthorized request (User Not avilable), No auth token"
 }

@@ -1,24 +1,17 @@
 package Stepdefination;
 
 
-import Resources.TestContext;
 import Resources.TestDataFields;
 import Resources.Utils;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.restassured.builder.ResponseSpecBuilder;
-import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.specification.RequestSpecification;
-import io.restassured.specification.ResponseSpecification;
-import org.apache.poi.ss.usermodel.Workbook;
-
-import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
 public class StepDefinationConsumer extends Utils {
+
 
 
     RequestSpecification res;
@@ -31,7 +24,10 @@ public class StepDefinationConsumer extends Utils {
     public StepDefinationConsumer() {
         this.step = new StepDefinationFile();
     }
-    static int OTP;
+    private int OTP;
+    public int getOtp() {
+        return OTP;
+    }
 
 //    @Given("Sent otp payload")
 //    public void sent_otp_payload() throws IOException {

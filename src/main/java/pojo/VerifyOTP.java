@@ -2,7 +2,8 @@ package pojo;
 
 public class VerifyOTP {
     private String email_address;
-    private String otp ;
+    private String otp;
+
     public String getEmail_address() {
         return email_address;
     }
@@ -18,6 +19,5 @@ public class VerifyOTP {
     public void setOtp(String otp) {
         this.otp = otp;
     }
-
 
 }
