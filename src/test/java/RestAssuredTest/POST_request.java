@@ -83,5 +83,37 @@ public class POST_request {
 
 
     }
+    @Test
+    public void verifyOTP(){
+
+        String response = RestAssured.given().log().all().header("Content-Type", "application/json")
+                .body("{\n" +
+                        "    \"email_address\" : \"adityapawar12@yopmail.com\"\n" +
+                        "}")
+                .when()
+                .post("https://qa.gaedkeeper.com/qa/api/v1/user/send-otp")
+                .then().assertThat().statusCode(200)
+                //.body(matchesJsonSchema(new File("src/test/resources/schema.json")))
+                .extract().response().asString();
+        System.out.println("This is the reponse using the path "  + response);
+        JsonPath jsons = new JsonPath(response);
+        String otp = jsons.getString("data.code");
+        System.out.println( "This is otp : " + otp );
+
+
+        String response1 = RestAssured.given().log().all().header("Content-Type", "application/json")
+                .body("\n" +
+                        "{\n" +
+                        "    \"email_address\" : \"adityapawar12@yopmail.com\",\n" +
+                        "    \"otp\" : \""+otp+"\"\n" +
+                        "}")
+                .when()
+                .post("https://qa.gaedkeeper.com/qa/api/v1/user/verify-otp")
+                .then().assertThat().statusCode(200)
+                //.body(matchesJsonSchema(new File("src/test/resources/schema.json")))
+                .extract().response().asString();
+        System.out.println("This is the reponse using the path "  + response1);
+
+    }
 
 }
