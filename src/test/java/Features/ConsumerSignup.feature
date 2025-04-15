@@ -9,6 +9,7 @@ Feature: Consumer Signup api
     Then Api call "ConsumerLogin" is success and status code 201 OK
     Then Get the Logintoken from the response and save in the excel
 
+  Scenario:
 
 
 

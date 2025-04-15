@@ -9,6 +9,7 @@ import io.restassured.path.json.JsonPath;
 import org.testng.Assert;
 
 import java.io.IOException;
+import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
@@ -22,6 +23,18 @@ public class StepDefinationBuyandSell extends Utils {
         String actualProjectName = js.get("data.project_name");
         Assert.assertEquals(actualProjectName,projectname);
     }
+    @Then("Verify that getting projects")
+    public void verify_that_getting_projects() {
+        JsonPath js = new JsonPath(response);
+        int count =  js.getInt("data.unsold_result.size()");
+        String title = "";
+        for(int i = 0 ; i<count; i++){
+             title = js.get("data.unsold_result["+0+"].project_name");
+            System.out.println("title is : "+ title);
+        }
+
+    }
+
 
 
 }

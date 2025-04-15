@@ -8,7 +8,10 @@ public enum APIResources {
     GetPlaceAPI("/maps/api/place/get/json"),
     SentOTP("/user/send-otp"),
     ConsumerLogin("/user/login"),
-    BuyandSellCreateProject("/project/sell-add");
+    BuyandSellCreateProject("/project/sell-add"),
+    MyProjectList("/project/my-project-list"),
+    ProjectDetail("P/project/sell-view");
+
     private String resource;
      APIResources(String resource){
             this.resource= resource;

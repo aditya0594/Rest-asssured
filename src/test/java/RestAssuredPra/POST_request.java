@@ -112,7 +112,17 @@ public class POST_request {
                 //.body(matchesJsonSchema(new File("src/test/resources/schema.json")))
                 .extract().response().asString();
         System.out.println("This is the reponse using the path "  + response1);
+    }
 
+    @Test
+    public void headmethod(){
+        String updatedAddress = "Summer walk, USA";
+        String getResponse = RestAssured.given().log().all()
+                .queryParam("key", "qaclick123")
+                .queryParam("place_id", "01a5abec5e97326f9f7f66a240aee923")
+                .when().head("/maps/api/place/get/json")
+                .then().assertThat().statusCode(200).extract().response().asString();
+        System.out.println("This is the head response : "+ getResponse);
     }
 
 }

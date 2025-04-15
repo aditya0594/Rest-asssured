@@ -13,7 +13,7 @@ import java.util.List;
         ,plugin = "json:target/jsonReports/cucumber-report.json"
         ,glue = {"Stepdefination"},dryRun = false)
 public class TestRunnerBuySell extends AbstractTestNGCucumberTests {
-    @Override
+   /* @Override
     @DataProvider(parallel = true)
     public Object[][] scenarios() {
         Object[][] scenarios = super.scenarios();
@@ -27,5 +27,5 @@ public class TestRunnerBuySell extends AbstractTestNGCucumberTests {
         }
 
         return repeated.toArray(new Object[0][0]);
-    }
+    }*/
 }

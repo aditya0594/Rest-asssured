@@ -170,8 +170,11 @@ public class StepDefinationFile extends Utils{
 
     }
     public static String ProjectName;
-    @Given("Payload for the buy and sell project")
-    public void payload_for_the_buy_and_sell_project() throws IOException {
+
+
+    @Given("Payload for the buy and sell project {string}")
+    public void payload_for_the_buy_and_sell_project_project(String projectname) throws IOException {
+
         //    RequestSpecification =  given().spec(requestspecification("")).queryParams(
         Responsespec = new ResponseSpecBuilder()
                 .expectContentType(ContentType.JSON)
@@ -180,11 +183,12 @@ public class StepDefinationFile extends Utils{
         String  authTokenLoginToken =  readExcel("Tokens",1,2);
         System.out.println("This is the login token from the excel  : " + authTokenLoginToken);
 
-        ProjectName = "Automation project 1";
+        ProjectName = projectname;
         String Image = readExcel("ImagePdf",1,0);
         RequestSpecification  = given().spec(requestspecification("https://marketplace.qa.gaedkeeper.com/qa/api/v1"))
                 .header("x-gaed-auth",authTokenLoginToken).header("Content-Type","application/json")
-                .body("{\n" +
+                .body(data.buysellpayload(ProjectName));
+               /* .body("{\n" +
                         "    \"project_name\": \""+ProjectName+"\",\n" +
                         "    \"project_description\": \"\",\n" +
                         "    \"master_project_type_id\": 1,\n" +
@@ -249,6 +253,59 @@ public class StepDefinationFile extends Utils{
                         "        }\n" +
                         "    ],\n" +
                         "    \"project_documents\": []\n" +
+                        "}");*/
+    }
+    @Given("Payload for project listing")
+    public void payload_for_project_listing() throws IOException {
+        Responsespec = new ResponseSpecBuilder()
+                .expectContentType(ContentType.JSON)
+                .build();
+
+        String  authTokenLoginToken =  readExcel("Tokens",1,2);
+        System.out.println("This is the login token from the excel  : " + authTokenLoginToken);
+
+        String Image = readExcel("ImagePdf",1,0);
+        RequestSpecification  = given().spec(requestspecification("https://marketplace.qa.gaedkeeper.com/qa/api/v1"))
+                .header("x-gaed-auth",authTokenLoginToken).header("Content-Type","application/json")
+                .body("{\n" +
+                        "    \"filter\" : {\n" +
+                        "        \"country_id\" : [],\n" +
+                        "        \"min_capacity\" : null,\n" +
+                        "        \"max_capacity\" : null,\n" +
+                        "        \"sort_project\": true,\n" +
+                        " \n" +
+                        "        \"project_status\": [],\n" +
+                        "        \"is_draft\" : false,\n" +
+                        "        \"sold_country_id\" :  [],\n" +
+                        "        \"sold_min_capacity\" : null,\n" +
+                        "        \"sold_max_capacity\" : null,\n" +
+                        "        \"sold_sort_project\": true\n" +
+                        "    },\n" +
+                        " \n" +
+                        "    \"pageLimit\": 100,\n" +
+                        "    \"pageNo\": 1,\n" +
+                        " \n" +
+                        "    \"soldPageLimit\": 50,\n" +
+                        "    \"soldPageNo\": 1\n" +
+                        "}");
+
+
+    }
+
+    @Given("Payload for project details")
+    public void payload_for_project_details() throws IOException {
+        Responsespec = new ResponseSpecBuilder()
+                .expectContentType(ContentType.JSON)
+                .build();
+
+        String  authTokenLoginToken =  readExcel("Tokens",1,2);
+        System.out.println("This is the login token from the excel  : " + authTokenLoginToken);
+
+        String Image = readExcel("ImagePdf",1,0);
+        RequestSpecification  = given().spec(requestspecification("https://marketplace.qa.gaedkeeper.com/qa/api/v1"))
+                .header("x-gaed-auth",authTokenLoginToken).header("Content-Type","application/json")
+                .body("{\n" +
+                        "    \"project_id\" : 54\n" +
                         "}");
     }
 
