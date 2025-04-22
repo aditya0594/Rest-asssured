@@ -57,7 +57,34 @@ public class Question_answers {
      Helps clients understand what methods are supported (like GET, POST, PUT, etc.)
 
 
+     6. What is the difference between given(), when(), and then() in Rest Assured?
+     1. given(): Used to set up the request by defining preconditions like headers, parameters, cookies, body, or authentication.
+     2. when(): Specifies the action, such as triggering the HTTP method (GET, POST, PUT, DELETE) on a specific endpoint.
+     3. then(): Validates the response by performing assertions on the status code, headers, body, or other response attributes.
+
+
+     7. What is the role of baseURI and basePath in Rest Assured?
+     In Rest Assured, baseURI specifies the base URL, while basePath defines the endpoint path to be appended to the base URL.
+
+     baseURI: Specifies the base URL.
+     basePath: Defines the endpoint path.
+     RestAssured.baseURI = "https://api.example.com";
+
+     RestAssured.basePath = "/v1/users";
+
+
+     8.  How do you set headers in a Rest Assured request?
+     We can set headers in a Rest Assured request using .header("HeaderName", "HeaderValue") to add custom headers.
+     Example: given().header("Authorization", "Bearer token");
+
+
+     9. What is the use of RequestSpecification in Rest Assured?
+     RequestSpecification in Rest Assured is used to define reusable request setups,
+     such as base URI, headers, authentication, or query parameters, which can be applied across multiple tests.
+     This reduces redundancy, improves maintainability, and enhances the efficiency of API testing projects.
      */
+
+
 
 
 }

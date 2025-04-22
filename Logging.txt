@@ -6,7 +6,7 @@ Query params:	<none>
 Form params:	<none>
 Path params:	<none>
 Headers:		Accept=application/json
-				x-gaed-auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkaXR5YXBhd2FyQHlvcG1haWwuY29tIiwidXNlcklkIjo5LCJtb2JpbGVfbnVtYmVyIjpudWxsLCJpYXQiOjE3NDQ2NTY4MTAsImV4cCI6MTc3NjIxNDQxMH0.NsrCXIcWUgL-c2g1-XOCMClTNvX4PkBdluLof0Tsi9U
+				x-gaed-auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkaXR5YXBhd2FyQHlvcG1haWwuY29tIiwidXNlcklkIjo5LCJtb2JpbGVfbnVtYmVyIjpudWxsLCJpYXQiOjE3NDQ3MzY4MjEsImV4cCI6MTc3NjI5NDQyMX0.ammu8PUcawUx685qllLBeSdvS3XMJyYPZkg8CxXBR_4
 				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
 Multiparts:		<none>
@@ -36,13 +36,13 @@ Body:
     "soldPageNo": 1
 }
 HTTP/1.1 200 OK
-Date: Tue, 15 Apr 2025 09:28:03 GMT
+Date: Wed, 16 Apr 2025 10:19:48 GMT
 Server: Apache/2.4.52 (Ubuntu)
 X-Powered-By: Express
 Access-Control-Allow-Origin: *
 Content-Type: application/json; charset=utf-8
-Content-Length: 34356
-ETag: W/"8634-PjB0NCOgZ0YNi8YJ4Jlb7oeLvnc"
+Content-Length: 48040
+ETag: W/"bba8-G8IefSKUskpyvmk1Qdn3MdoTSu4"
 Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
 
@@ -1579,7 +1579,848 @@ Connection: Keep-Alive
                     "is_active": true
                 },
                 "bid_Count": 0
+            },
+            {
+                "id": 29,
+                "capacity_in_kw": 1000,
+                "user_id": 9,
+                "consumer_id": 2,
+                "project_uid": "2147e3b3-4f0d-4b1b-a570-e1bcdce17205",
+                "is_draft": false,
+                "project_name": "Project Alpha",
+                "project_description": "",
+                "location": "Chatrapati Square, Sawarkar Nagar, Vivekanand Nagar, Nagpur, Maharashtra",
+                "latitude": 21.1107592,
+                "longitude": 79.07008859999999,
+                "master_country_id": 103,
+                "master_project_type_id": 1,
+                "master_project_category_id": 2,
+                "project_capacity": 1000,
+                "master_capacity_unit_id": 2,
+                "sell_budget": 150000,
+                "sbu_master_currency_id": 125,
+                "is_sold": false,
+                "sold_for_bid": null,
+                "bid_detail_id": null,
+                "sold_date": null,
+                "created_at": "2025-04-15 22:44:23",
+                "updated_at": "2025-04-15 22:44:23",
+                "MasterCountry": {
+                    "id": 103,
+                    "code": "IN",
+                    "international_dialing": "91",
+                    "name": "India",
+                    "is_active": true
+                },
+                "ProjectMedia": [
+                    {
+                        "project_id": 29,
+                        "attachment": "https://marketplace.qa.gaedkeeper.com/qa/api/v1/download-media-base64?key=project-media/29/thumbnail/57b46715-12cd-4822-9417-377093c4ae39.png",
+                        "is_thumbnail": true,
+                        "attachment_title": "IMG 1.png",
+                        "attachment_type": "png",
+                        "is_document": false,
+                        "is_image": true,
+                        "attachment_thumbnail": "project-media/29/thumbnail/57b46715-12cd-4822-9417-377093c4ae39.png"
+                    }
+                ],
+                "MasterProjectCategory": {
+                    "id": 2,
+                    "name": "Sell Existing Solar",
+                    "is_active": true
+                },
+                "MasterProjectStatus": {
+                    "id": 1,
+                    "name": "Pending",
+                    "is_active": true
+                },
+                "SbuMasterCurrency": {
+                    "id": 125,
+                    "name": "SGD",
+                    "is_active": true
+                },
+                "bid_Count": 0
+            },
+            {
+                "id": 30,
+                "capacity_in_kw": 1000,
+                "user_id": 9,
+                "consumer_id": 2,
+                "project_uid": "90b130d0-72df-4786-a37b-8d6e753bdee2",
+                "is_draft": false,
+                "project_name": "Project Beta",
+                "project_description": "",
+                "location": "Chatrapati Square, Sawarkar Nagar, Vivekanand Nagar, Nagpur, Maharashtra",
+                "latitude": 21.1107592,
+                "longitude": 79.07008859999999,
+                "master_country_id": 103,
+                "master_project_type_id": 1,
+                "master_project_category_id": 2,
+                "project_capacity": 1000,
+                "master_capacity_unit_id": 2,
+                "sell_budget": 150000,
+                "sbu_master_currency_id": 125,
+                "is_sold": false,
+                "sold_for_bid": null,
+                "bid_detail_id": null,
+                "sold_date": null,
+                "created_at": "2025-04-15 22:44:32",
+                "updated_at": "2025-04-15 22:44:32",
+                "MasterCountry": {
+                    "id": 103,
+                    "code": "IN",
+                    "international_dialing": "91",
+                    "name": "India",
+                    "is_active": true
+                },
+                "ProjectMedia": [
+                    {
+                        "project_id": 30,
+                        "attachment": "https://marketplace.qa.gaedkeeper.com/qa/api/v1/download-media-base64?key=project-media/30/thumbnail/d74f3548-61c0-4a79-81b3-ff3208b62cd8.png",
+                        "is_thumbnail": true,
+                        "attachment_title": "IMG 1.png",
+                        "attachment_type": "png",
+                        "is_document": false,
+                        "is_image": true,
+                        "attachment_thumbnail": "project-media/30/thumbnail/d74f3548-61c0-4a79-81b3-ff3208b62cd8.png"
+                    }
+                ],
+                "MasterProjectCategory": {
+                    "id": 2,
+                    "name": "Sell Existing Solar",
+                    "is_active": true
+                },
+                "MasterProjectStatus": {
+                    "id": 1,
+                    "name": "Pending",
+                    "is_active": true
+                },
+                "SbuMasterCurrency": {
+                    "id": 125,
+                    "name": "SGD",
+                    "is_active": true
+                },
+                "bid_Count": 0
+            },
+            {
+                "id": 31,
+                "capacity_in_kw": 1000,
+                "user_id": 9,
+                "consumer_id": 2,
+                "project_uid": "7155b2dd-c8ae-4b1a-b37f-8d44a8fb8844",
+                "is_draft": false,
+                "project_name": "Project Gamma",
+                "project_description": "",
+                "location": "Chatrapati Square, Sawarkar Nagar, Vivekanand Nagar, Nagpur, Maharashtra",
+                "latitude": 21.1107592,
+                "longitude": 79.07008859999999,
+                "master_country_id": 103,
+                "master_project_type_id": 1,
+                "master_project_category_id": 2,
+                "project_capacity": 1000,
+                "master_capacity_unit_id": 2,
+                "sell_budget": 150000,
+                "sbu_master_currency_id": 125,
+                "is_sold": false,
+                "sold_for_bid": null,
+                "bid_detail_id": null,
+                "sold_date": null,
+                "created_at": "2025-04-15 22:44:37",
+                "updated_at": "2025-04-15 22:44:37",
+                "MasterCountry": {
+                    "id": 103,
+                    "code": "IN",
+                    "international_dialing": "91",
+                    "name": "India",
+                    "is_active": true
+                },
+                "ProjectMedia": [
+                    {
+                        "project_id": 31,
+                        "attachment": "https://marketplace.qa.gaedkeeper.com/qa/api/v1/download-media-base64?key=project-media/31/thumbnail/1499493d-f10f-4944-9239-c5061b4831cc.png",
+                        "is_thumbnail": true,
+                        "attachment_title": "IMG 1.png",
+                        "attachment_type": "png",
+                        "is_document": false,
+                        "is_image": true,
+                        "attachment_thumbnail": "project-media/31/thumbnail/1499493d-f10f-4944-9239-c5061b4831cc.png"
+                    }
+                ],
+                "MasterProjectCategory": {
+                    "id": 2,
+                    "name": "Sell Existing Solar",
+                    "is_active": true
+                },
+                "MasterProjectStatus": {
+                    "id": 1,
+                    "name": "Pending",
+                    "is_active": true
+                },
+                "SbuMasterCurrency": {
+                    "id": 125,
+                    "name": "SGD",
+                    "is_active": true
+                },
+                "bid_Count": 0
+            },
+            {
+                "id": 32,
+                "capacity_in_kw": 1000,
+                "user_id": 9,
+                "consumer_id": 2,
+                "project_uid": "5f137673-5aae-4c4e-a281-ce7d59eaeed2",
+                "is_draft": false,
+                "project_name": "Solar Initiative",
+                "project_description": "",
+                "location": "Chatrapati Square, Sawarkar Nagar, Vivekanand Nagar, Nagpur, Maharashtra",
+                "latitude": 21.1107592,
+                "longitude": 79.07008859999999,
+                "master_country_id": 103,
+                "master_project_type_id": 1,
+                "master_project_category_id": 2,
+                "project_capacity": 1000,
+                "master_capacity_unit_id": 2,
+                "sell_budget": 150000,
+                "sbu_master_currency_id": 125,
+                "is_sold": false,
+                "sold_for_bid": null,
+                "bid_detail_id": null,
+                "sold_date": null,
+                "created_at": "2025-04-15 22:44:42",
+                "updated_at": "2025-04-15 22:44:42",
+                "MasterCountry": {
+                    "id": 103,
+                    "code": "IN",
+                    "international_dialing": "91",
+                    "name": "India",
+                    "is_active": true
+                },
+                "ProjectMedia": [
+                    {
+                        "project_id": 32,
+                        "attachment": "https://marketplace.qa.gaedkeeper.com/qa/api/v1/download-media-base64?key=project-media/32/thumbnail/20f80d69-9e8e-4511-8f80-7227d1d33c2b.png",
+                        "is_thumbnail": true,
+                        "attachment_title": "IMG 1.png",
+                        "attachment_type": "png",
+                        "is_document": false,
+                        "is_image": true,
+                        "attachment_thumbnail": "project-media/32/thumbnail/20f80d69-9e8e-4511-8f80-7227d1d33c2b.png"
+                    }
+                ],
+                "MasterProjectCategory": {
+                    "id": 2,
+                    "name": "Sell Existing Solar",
+                    "is_active": true
+                },
+                "MasterProjectStatus": {
+                    "id": 1,
+                    "name": "Pending",
+                    "is_active": true
+                },
+                "SbuMasterCurrency": {
+                    "id": 125,
+                    "name": "SGD",
+                    "is_active": true
+                },
+                "bid_Count": 0
+            },
+            {
+                "id": 33,
+                "capacity_in_kw": 1000,
+                "user_id": 9,
+                "consumer_id": 2,
+                "project_uid": "58b98c3f-9bcc-459c-9cc7-8f92549eea7c",
+                "is_draft": false,
+                "project_name": "Wind Power Project",
+                "project_description": "",
+                "location": "Chatrapati Square, Sawarkar Nagar, Vivekanand Nagar, Nagpur, Maharashtra",
+                "latitude": 21.1107592,
+                "longitude": 79.07008859999999,
+                "master_country_id": 103,
+                "master_project_type_id": 1,
+                "master_project_category_id": 2,
+                "project_capacity": 1000,
+                "master_capacity_unit_id": 2,
+                "sell_budget": 150000,
+                "sbu_master_currency_id": 125,
+                "is_sold": false,
+                "sold_for_bid": null,
+                "bid_detail_id": null,
+                "sold_date": null,
+                "created_at": "2025-04-15 22:44:48",
+                "updated_at": "2025-04-15 22:44:48",
+                "MasterCountry": {
+                    "id": 103,
+                    "code": "IN",
+                    "international_dialing": "91",
+                    "name": "India",
+                    "is_active": true
+                },
+                "ProjectMedia": [
+                    {
+                        "project_id": 33,
+                        "attachment": "https://marketplace.qa.gaedkeeper.com/qa/api/v1/download-media-base64?key=project-media/33/thumbnail/30fa27ee-3887-4e04-ad94-a9f0333099b2.png",
+                        "is_thumbnail": true,
+                        "attachment_title": "IMG 1.png",
+                        "attachment_type": "png",
+                        "is_document": false,
+                        "is_image": true,
+                        "attachment_thumbnail": "project-media/33/thumbnail/30fa27ee-3887-4e04-ad94-a9f0333099b2.png"
+                    }
+                ],
+                "MasterProjectCategory": {
+                    "id": 2,
+                    "name": "Sell Existing Solar",
+                    "is_active": true
+                },
+                "MasterProjectStatus": {
+                    "id": 1,
+                    "name": "Pending",
+                    "is_active": true
+                },
+                "SbuMasterCurrency": {
+                    "id": 125,
+                    "name": "SGD",
+                    "is_active": true
+                },
+                "bid_Count": 0
+            },
+            {
+                "id": 34,
+                "capacity_in_kw": 1000,
+                "user_id": 9,
+                "consumer_id": 2,
+                "project_uid": "c4fc48cb-c339-49cb-a0c5-d27e062f969f",
+                "is_draft": false,
+                "project_name": "Project Alpha",
+                "project_description": "",
+                "location": "Chatrapati Square, Sawarkar Nagar, Vivekanand Nagar, Nagpur, Maharashtra",
+                "latitude": 21.1107592,
+                "longitude": 79.07008859999999,
+                "master_country_id": 103,
+                "master_project_type_id": 1,
+                "master_project_category_id": 2,
+                "project_capacity": 1000,
+                "master_capacity_unit_id": 2,
+                "sell_budget": 150000,
+                "sbu_master_currency_id": 125,
+                "is_sold": false,
+                "sold_for_bid": null,
+                "bid_detail_id": null,
+                "sold_date": null,
+                "created_at": "2025-04-15 22:47:55",
+                "updated_at": "2025-04-15 22:47:55",
+                "MasterCountry": {
+                    "id": 103,
+                    "code": "IN",
+                    "international_dialing": "91",
+                    "name": "India",
+                    "is_active": true
+                },
+                "ProjectMedia": [
+                    {
+                        "project_id": 34,
+                        "attachment": "https://marketplace.qa.gaedkeeper.com/qa/api/v1/download-media-base64?key=project-media/34/thumbnail/5a388a2d-3a37-4462-bd41-b9c7a2a00498.png",
+                        "is_thumbnail": true,
+                        "attachment_title": "IMG 1.png",
+                        "attachment_type": "png",
+                        "is_document": false,
+                        "is_image": true,
+                        "attachment_thumbnail": "project-media/34/thumbnail/5a388a2d-3a37-4462-bd41-b9c7a2a00498.png"
+                    }
+                ],
+                "MasterProjectCategory": {
+                    "id": 2,
+                    "name": "Sell Existing Solar",
+                    "is_active": true
+                },
+                "MasterProjectStatus": {
+                    "id": 1,
+                    "name": "Pending",
+                    "is_active": true
+                },
+                "SbuMasterCurrency": {
+                    "id": 125,
+                    "name": "SGD",
+                    "is_active": true
+                },
+                "bid_Count": 0
+            },
+            {
+                "id": 35,
+                "capacity_in_kw": 1000,
+                "user_id": 9,
+                "consumer_id": 2,
+                "project_uid": "9b07f9a2-81cc-4002-9666-fc418eba0c2c",
+                "is_draft": false,
+                "project_name": "Project Beta",
+                "project_description": "",
+                "location": "Chatrapati Square, Sawarkar Nagar, Vivekanand Nagar, Nagpur, Maharashtra",
+                "latitude": 21.1107592,
+                "longitude": 79.07008859999999,
+                "master_country_id": 103,
+                "master_project_type_id": 1,
+                "master_project_category_id": 2,
+                "project_capacity": 1000,
+                "master_capacity_unit_id": 2,
+                "sell_budget": 150000,
+                "sbu_master_currency_id": 125,
+                "is_sold": false,
+                "sold_for_bid": null,
+                "bid_detail_id": null,
+                "sold_date": null,
+                "created_at": "2025-04-15 22:48:03",
+                "updated_at": "2025-04-15 22:48:03",
+                "MasterCountry": {
+                    "id": 103,
+                    "code": "IN",
+                    "international_dialing": "91",
+                    "name": "India",
+                    "is_active": true
+                },
+                "ProjectMedia": [
+                    {
+                        "project_id": 35,
+                        "attachment": "https://marketplace.qa.gaedkeeper.com/qa/api/v1/download-media-base64?key=project-media/35/thumbnail/e2dabe74-223c-4829-9539-cb67bce18f65.png",
+                        "is_thumbnail": true,
+                        "attachment_title": "IMG 1.png",
+                        "attachment_type": "png",
+                        "is_document": false,
+                        "is_image": true,
+                        "attachment_thumbnail": "project-media/35/thumbnail/e2dabe74-223c-4829-9539-cb67bce18f65.png"
+                    }
+                ],
+                "MasterProjectCategory": {
+                    "id": 2,
+                    "name": "Sell Existing Solar",
+                    "is_active": true
+                },
+                "MasterProjectStatus": {
+                    "id": 1,
+                    "name": "Pending",
+                    "is_active": true
+                },
+                "SbuMasterCurrency": {
+                    "id": 125,
+                    "name": "SGD",
+                    "is_active": true
+                },
+                "bid_Count": 0
+            },
+            {
+                "id": 36,
+                "capacity_in_kw": 1000,
+                "user_id": 9,
+                "consumer_id": 2,
+                "project_uid": "2e539216-72f2-4dd2-896c-0cd8d6b52a6f",
+                "is_draft": false,
+                "project_name": "Project Gamma",
+                "project_description": "",
+                "location": "Chatrapati Square, Sawarkar Nagar, Vivekanand Nagar, Nagpur, Maharashtra",
+                "latitude": 21.1107592,
+                "longitude": 79.07008859999999,
+                "master_country_id": 103,
+                "master_project_type_id": 1,
+                "master_project_category_id": 2,
+                "project_capacity": 1000,
+                "master_capacity_unit_id": 2,
+                "sell_budget": 150000,
+                "sbu_master_currency_id": 125,
+                "is_sold": false,
+                "sold_for_bid": null,
+                "bid_detail_id": null,
+                "sold_date": null,
+                "created_at": "2025-04-15 22:48:10",
+                "updated_at": "2025-04-15 22:48:10",
+                "MasterCountry": {
+                    "id": 103,
+                    "code": "IN",
+                    "international_dialing": "91",
+                    "name": "India",
+                    "is_active": true
+                },
+                "ProjectMedia": [
+                    {
+                        "project_id": 36,
+                        "attachment": "https://marketplace.qa.gaedkeeper.com/qa/api/v1/download-media-base64?key=project-media/36/thumbnail/68697e71-cadc-4005-a474-de16fc41b2fe.png",
+                        "is_thumbnail": true,
+                        "attachment_title": "IMG 1.png",
+                        "attachment_type": "png",
+                        "is_document": false,
+                        "is_image": true,
+                        "attachment_thumbnail": "project-media/36/thumbnail/68697e71-cadc-4005-a474-de16fc41b2fe.png"
+                    }
+                ],
+                "MasterProjectCategory": {
+                    "id": 2,
+                    "name": "Sell Existing Solar",
+                    "is_active": true
+                },
+                "MasterProjectStatus": {
+                    "id": 1,
+                    "name": "Pending",
+                    "is_active": true
+                },
+                "SbuMasterCurrency": {
+                    "id": 125,
+                    "name": "SGD",
+                    "is_active": true
+                },
+                "bid_Count": 0
+            },
+            {
+                "id": 37,
+                "capacity_in_kw": 1000,
+                "user_id": 9,
+                "consumer_id": 2,
+                "project_uid": "1ec06dfb-e3b2-4e7f-af53-ba67f22ae089",
+                "is_draft": false,
+                "project_name": "Solar Initiative",
+                "project_description": "",
+                "location": "Chatrapati Square, Sawarkar Nagar, Vivekanand Nagar, Nagpur, Maharashtra",
+                "latitude": 21.1107592,
+                "longitude": 79.07008859999999,
+                "master_country_id": 103,
+                "master_project_type_id": 1,
+                "master_project_category_id": 2,
+                "project_capacity": 1000,
+                "master_capacity_unit_id": 2,
+                "sell_budget": 150000,
+                "sbu_master_currency_id": 125,
+                "is_sold": false,
+                "sold_for_bid": null,
+                "bid_detail_id": null,
+                "sold_date": null,
+                "created_at": "2025-04-15 22:48:17",
+                "updated_at": "2025-04-15 22:48:17",
+                "MasterCountry": {
+                    "id": 103,
+                    "code": "IN",
+                    "international_dialing": "91",
+                    "name": "India",
+                    "is_active": true
+                },
+                "ProjectMedia": [
+                    {
+                        "project_id": 37,
+                        "attachment": "https://marketplace.qa.gaedkeeper.com/qa/api/v1/download-media-base64?key=project-media/37/thumbnail/3225ed1d-e06f-4489-bbd1-bcb1938ac471.png",
+                        "is_thumbnail": true,
+                        "attachment_title": "IMG 1.png",
+                        "attachment_type": "png",
+                        "is_document": false,
+                        "is_image": true,
+                        "attachment_thumbnail": "project-media/37/thumbnail/3225ed1d-e06f-4489-bbd1-bcb1938ac471.png"
+                    }
+                ],
+                "MasterProjectCategory": {
+                    "id": 2,
+                    "name": "Sell Existing Solar",
+                    "is_active": true
+                },
+                "MasterProjectStatus": {
+                    "id": 1,
+                    "name": "Pending",
+                    "is_active": true
+                },
+                "SbuMasterCurrency": {
+                    "id": 125,
+                    "name": "SGD",
+                    "is_active": true
+                },
+                "bid_Count": 0
+            },
+            {
+                "id": 38,
+                "capacity_in_kw": 1000,
+                "user_id": 9,
+                "consumer_id": 2,
+                "project_uid": "ddede40f-bba6-4820-8d95-5b229d6ff63f",
+                "is_draft": false,
+                "project_name": "Wind Power Project",
+                "project_description": "",
+                "location": "Chatrapati Square, Sawarkar Nagar, Vivekanand Nagar, Nagpur, Maharashtra",
+                "latitude": 21.1107592,
+                "longitude": 79.07008859999999,
+                "master_country_id": 103,
+                "master_project_type_id": 1,
+                "master_project_category_id": 2,
+                "project_capacity": 1000,
+                "master_capacity_unit_id": 2,
+                "sell_budget": 150000,
+                "sbu_master_currency_id": 125,
+                "is_sold": false,
+                "sold_for_bid": null,
+                "bid_detail_id": null,
+                "sold_date": null,
+                "created_at": "2025-04-15 22:48:25",
+                "updated_at": "2025-04-15 22:48:25",
+                "MasterCountry": {
+                    "id": 103,
+                    "code": "IN",
+                    "international_dialing": "91",
+                    "name": "India",
+                    "is_active": true
+                },
+                "ProjectMedia": [
+                    {
+                        "project_id": 38,
+                        "attachment": "https://marketplace.qa.gaedkeeper.com/qa/api/v1/download-media-base64?key=project-media/38/thumbnail/c18c4650-bfa5-4f28-b9ba-01c2d688aeab.png",
+                        "is_thumbnail": true,
+                        "attachment_title": "IMG 1.png",
+                        "attachment_type": "png",
+                        "is_document": false,
+                        "is_image": true,
+                        "attachment_thumbnail": "project-media/38/thumbnail/c18c4650-bfa5-4f28-b9ba-01c2d688aeab.png"
+                    }
+                ],
+                "MasterProjectCategory": {
+                    "id": 2,
+                    "name": "Sell Existing Solar",
+                    "is_active": true
+                },
+                "MasterProjectStatus": {
+                    "id": 1,
+                    "name": "Pending",
+                    "is_active": true
+                },
+                "SbuMasterCurrency": {
+                    "id": 125,
+                    "name": "SGD",
+                    "is_active": true
+                },
+                "bid_Count": 0
             }
         ]
+    }
+}
+Request method:	POST
+Request URI:	https://marketplace.qa.gaedkeeper.com/qa/api/v1/project/sell-view
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json
+				x-gaed-auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkaXR5YXBhd2FyQHlvcG1haWwuY29tIiwidXNlcklkIjo5LCJtb2JpbGVfbnVtYmVyIjpudWxsLCJpYXQiOjE3NDQ3MzY4MjEsImV4cCI6MTc3NjI5NDQyMX0.ammu8PUcawUx685qllLBeSdvS3XMJyYPZkg8CxXBR_4
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "project_id": 2
+}
+HTTP/1.1 200 OK
+Date: Wed, 16 Apr 2025 10:19:52 GMT
+Server: Apache/2.4.52 (Ubuntu)
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Type: application/json; charset=utf-8
+Content-Length: 4445
+ETag: W/"115d-tSITqqw9GqOk6K6VIWLdybRJ4Ds"
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+
+{
+    "status": true,
+    "code": 200,
+    "message": "Fetch record successfully.",
+    "data": {
+        "id": 2,
+        "user_id": 9,
+        "consumer_id": 2,
+        "project_uid": "deb49351-aeb5-4fef-ae39-77f250d54f15",
+        "project_name": "Project testing",
+        "project_description": "",
+        "master_project_type_id": 1,
+        "master_project_category_id": 2,
+        "location": "Chatrapati Square, Sawarkar Nagar, Vivekanand Nagar, Nagpur, Maharashtra",
+        "latitude": 21.1107592,
+        "longitude": 79.07008859999999,
+        "master_country_id": 103,
+        "project_capacity": 1000,
+        "master_capacity_unit_id": 2,
+        "mounting_system": "System",
+        "installation_date": "2025-04-09 05:30:00",
+        "generation_data": "12",
+        "generation_data_unit": 2,
+        "master_grid_connection_id": 3,
+        "sell_budget": 15000,
+        "sbu_master_currency_id": 125,
+        "avg_system_eff": "10.00",
+        "avg_system_eff_unit": "%",
+        "addon_feature": "wsfsefsdfewf",
+        "master_agreement_type_id": 1,
+        "cost_sharing": 100,
+        "master_cost_sharing_unit_id": 125,
+        "average_monthly_payment": 1,
+        "amp_master_currency_id": 125,
+        "leasing_tariff": null,
+        "lt_master_currency_id": 125,
+        "tenure_length": 1,
+        "tenure_length_unit": null,
+        "tenure_age": 1,
+        "tenure_age_unit": null,
+        "current_tenancy_age": 100,
+        "module_brand": "brand",
+        "maintenance_covered_under": true,
+        "temporary_occupation_permit_date": "2025-04-15 05:30:00",
+        "degeneration_rate": "1.00",
+        "emission_rate": "975000",
+        "emission_rate_unit": "KgCO₂",
+        "bid_expiry_day": 30,
+        "bid_expiry_date": "2025-05-02 18:13:33",
+        "extend_expiry_count": 0,
+        "is_sold": false,
+        "sold_date": null,
+        "sold_for_bid": null,
+        "bid_detail_id": null,
+        "master_project_status_id": 3,
+        "step_one_change": null,
+        "step_two_change": null,
+        "step_three_change": null,
+        "created_at": "2025-04-02 18:13:03",
+        "MasterCountry": {
+            "id": 103,
+            "code": "IN",
+            "international_dialing": "91",
+            "name": "India",
+            "is_active": true
+        },
+        "ProjectRejectData": [
+            
+        ],
+        "ProjectMedia": [
+            {
+                "id": 7,
+                "project_id": 2,
+                "attachment": "https://marketplace.qa.gaedkeeper.com/qa/api/v1/download-media-base64?key=project-media/2/7e030623-0090-4b3c-8067-ac93ebbe892b.png",
+                "is_thumbnail": false,
+                "attachment_title": "image2.png",
+                "attachment_type": "png",
+                "is_document": false,
+                "is_image": true,
+                "is_certificate": false,
+                "certificate_name": null
+            },
+            {
+                "id": 8,
+                "project_id": 2,
+                "attachment": "https://marketplace.qa.gaedkeeper.com/qa/api/v1/download-media-base64?key=project-media/2/b72f595a-6692-47af-b351-3fc8ce6e4a14.jpeg",
+                "is_thumbnail": false,
+                "attachment_title": "image3.jpg",
+                "attachment_type": "jpeg",
+                "is_document": false,
+                "is_image": true,
+                "is_certificate": false,
+                "certificate_name": null
+            },
+            {
+                "id": 9,
+                "project_id": 2,
+                "attachment": "https://marketplace.qa.gaedkeeper.com/qa/api/v1/download-media-base64?key=project-media/2/5737f63c-0a3a-4884-a6fb-0c3f873b1655.png",
+                "is_thumbnail": false,
+                "attachment_title": "image4.png",
+                "attachment_type": "png",
+                "is_document": false,
+                "is_image": true,
+                "is_certificate": false,
+                "certificate_name": null
+            },
+            {
+                "id": 10,
+                "project_id": 2,
+                "attachment": "https://marketplace.qa.gaedkeeper.com/qa/api/v1/download-media-base64?key=project-media/2/cbc3f641-406b-409f-8970-2f1728045179.png",
+                "is_thumbnail": true,
+                "attachment_title": "image1.png",
+                "attachment_type": "png",
+                "is_document": false,
+                "is_image": true,
+                "is_certificate": false,
+                "certificate_name": null
+            },
+            {
+                "id": 11,
+                "project_id": 2,
+                "attachment": "https://marketplace.qa.gaedkeeper.com/qa/api/v1/download-media-base64?key=https://www.youtube.com/watch?v=Xf0yP-kNyXQ",
+                "is_thumbnail": null,
+                "attachment_title": "Video URL",
+                "attachment_type": "video",
+                "is_document": false,
+                "is_image": null,
+                "is_certificate": false,
+                "certificate_name": null
+            }
+        ],
+        "MasterProjectStatus": {
+            "id": 3,
+            "name": "Published",
+            "is_active": true
+        },
+        "MasterProjectType": {
+            "id": 1,
+            "name": "Solar",
+            "is_active": true
+        },
+        "MasterProjectCategory": {
+            "id": 2,
+            "name": "Sell Existing Solar",
+            "is_active": true
+        },
+        "MasterCapacityUnit": {
+            "id": 2,
+            "name": "KW",
+            "is_active": true
+        },
+        "MasterGridConnection": {
+            "id": 3,
+            "name": "Hybrid Systems",
+            "is_active": true
+        },
+        "MasterAgreementType": {
+            "id": 1,
+            "name": "PPA Agreement",
+            "is_active": true
+        },
+        "MasterModuleSpecification": {
+            "id": 5,
+            "name": "Bifacial Solar Panels",
+            "is_active": true
+        },
+        "SbuMasterCurrency": {
+            "id": 125,
+            "name": "SGD",
+            "is_active": true
+        },
+        "AmpMasterCurrency": {
+            "id": 125,
+            "name": "SGD",
+            "is_active": true
+        },
+        "LtMasterCurrency": {
+            "id": 125,
+            "name": "SGD",
+            "is_active": true
+        },
+        "MasterCostSharingUnit": {
+            "id": 125,
+            "name": "SGD per kWh",
+            "is_active": true
+        },
+        "User": {
+            "id": 9,
+            "first_name": "aditya",
+            "last_name": "pawar",
+            "email_address": "adityapawar@yopmail.com",
+            "Consumer": {
+                "id": 2,
+                "address": "Chhatrapati Shivaji Maharaj International Airport Mumbai (BOM), Mumbai, Maharashtra, India",
+                "is_hide_profile": false,
+                "profile_photo": null,
+                "profile_thumbnail": null,
+                "phone_code": "65",
+                "mobile_number": 23434234
+            }
+        },
+        "is_already_bid": false
     }
 }

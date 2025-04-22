@@ -2,7 +2,7 @@ package Resources;
 
 public enum APIResources {
 
-    //enum is th special class in the java which has a collection of constants and methods
+    //enum is the special class in the java which has a collection of constants and methods
      AddPlaceAPI("/maps/api/place/add/json"),
     DeletePlaceAPI("/maps/api/place/delete/json"),
     GetPlaceAPI("/maps/api/place/get/json"),
@@ -10,7 +10,7 @@ public enum APIResources {
     ConsumerLogin("/user/login"),
     BuyandSellCreateProject("/project/sell-add"),
     MyProjectList("/project/my-project-list"),
-    ProjectDetail("P/project/sell-view");
+    ProjectDetail("/project/sell-view");
 
     private String resource;
      APIResources(String resource){

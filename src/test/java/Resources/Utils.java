@@ -19,12 +19,12 @@ public class Utils {
     public RequestSpecification requestspecification(String baseurl) throws IOException {
 
         if (requestspec == null) {
-            // here this printStream is a object which asking for the lRequestLoggingFilter.logRequestTo()
+            // here this printStream is a object which asking for the RequestLoggingFilter.logRequestTo()
             PrintStream log = new PrintStream(new FileOutputStream("Logging.txt")); // here we are creating the file of logs
             requestspec = new RequestSpecBuilder().setBaseUri(baseurl) //"https://qa.gaedkeeper.com/qa/api/v1"
                     //.addQueryParam("Key", "qaclick123")
                     .addFilter(RequestLoggingFilter.logRequestTo(log))
-                    .addFilter(ResponseLoggingFilter.logResponseTo(log))//this is for the logs in the text file
+                    .addFilter(ResponseLoggingFilter.logResponseTo(log)) //this is for the logs in the text file
                     .setContentType(ContentType.JSON)
                     .addHeader("Accept", "application/json")
                     .build();

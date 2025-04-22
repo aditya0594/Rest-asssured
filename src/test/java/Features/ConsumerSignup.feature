@@ -1,8 +1,9 @@
+@regression @consumer
 Feature: Consumer Signup api
   Scenario: To test the sent OTP API
     Given Consumer user Send and Verify OTP
     Then Get the Logintoken from the response
-
+  @login @otp
   Scenario: To test the Login consumer
     Given Login consumer payload
     When User call "ConsumerLogin" with "POST" http request

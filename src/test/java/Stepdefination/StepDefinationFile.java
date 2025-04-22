@@ -259,6 +259,7 @@ public class StepDefinationFile extends Utils{
     public void payload_for_project_listing() throws IOException {
         Responsespec = new ResponseSpecBuilder()
                 .expectContentType(ContentType.JSON)
+                .expectStatusCode(200)
                 .build();
 
         String  authTokenLoginToken =  readExcel("Tokens",1,2);
@@ -291,23 +292,25 @@ public class StepDefinationFile extends Utils{
 
 
     }
-
     @Given("Payload for project details")
     public void payload_for_project_details() throws IOException {
         Responsespec = new ResponseSpecBuilder()
                 .expectContentType(ContentType.JSON)
+                .expectStatusCode(200)
                 .build();
 
         String  authTokenLoginToken =  readExcel("Tokens",1,2);
         System.out.println("This is the login token from the excel  : " + authTokenLoginToken);
 
-        String Image = readExcel("ImagePdf",1,0);
+       // String Image = readExcel("ImagePdf",1,0);
         RequestSpecification  = given().spec(requestspecification("https://marketplace.qa.gaedkeeper.com/qa/api/v1"))
                 .header("x-gaed-auth",authTokenLoginToken).header("Content-Type","application/json")
                 .body("{\n" +
-                        "    \"project_id\" : 54\n" +
+                        "    \"project_id\" : 2\n" +
                         "}");
     }
+
+
 
 }
 

@@ -16,7 +16,7 @@ import static io.restassured.RestAssured.given;
 public class StepDefinationBuyandSell extends Utils {
     String response = StepDefinationFile.response;
     String projectname = StepDefinationFile.ProjectName;
-
+    int ProjectId;
     @Then("verify the project is created with same name")
     public void verify_the_project_is_created_with_same_name() {
         JsonPath js = new JsonPath(response);
@@ -28,6 +28,7 @@ public class StepDefinationBuyandSell extends Utils {
         JsonPath js = new JsonPath(response);
         int count =  js.getInt("data.unsold_result.size()");
         String title = "";
+        ProjectId = js.get("data.unsold_result["+0+"].id");
         for(int i = 0 ; i<count; i++){
              title = js.get("data.unsold_result["+0+"].project_name");
             System.out.println("title is : "+ title);

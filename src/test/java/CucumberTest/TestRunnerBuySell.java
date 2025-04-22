@@ -11,7 +11,8 @@ import java.util.List;
 @Test(invocationCount = 3)
 @CucumberOptions(features ="src/test/java/Features/BuyandSell.feature"
         ,plugin = "json:target/jsonReports/cucumber-report.json"
-        ,glue = {"Stepdefination"},dryRun = false)
+        ,glue = {"Stepdefination"},
+        dryRun = false)
 public class TestRunnerBuySell extends AbstractTestNGCucumberTests {
    /* @Override
     @DataProvider(parallel = true)

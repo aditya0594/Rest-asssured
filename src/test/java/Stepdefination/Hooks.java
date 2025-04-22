@@ -5,13 +5,12 @@ import io.cucumber.java.Before;
 import java.io.IOException;
 
 public class Hooks {
-    @Before("@deleteplace")
+    @Before("@otp")
     public void beforScenario() throws IOException {
         StepDefinationFile stepfile = new StepDefinationFile();
         if(stepfile.place_id == null) {
-            stepfile.add_place_payload("hooksname", "HooksAddress");
-            stepfile.user_call_with_http_request("AddPlaceAPI", "POST");
-            stepfile.verify_the_place_id_created_maps_to_using("hooksname", "GetPlaceAPI");
+            stepfile.consumer_user_send_and_verify_otp();
+            stepfile.get_the_logintoken_from_the_response();
         }
 
     }

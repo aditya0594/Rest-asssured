@@ -64,6 +64,10 @@ public class StepDefinationConsumer extends Utils {
         String LoginToken = js.get("data.authToken");
         writeExcel("Tokens",1,2,LoginToken);
     }
+    @Then("Verify that projects details")
+    public void verify_that_projects_details() {
+
+    }
 
 
 
